@@ -2,6 +2,7 @@
     "name": "idfy-eve/sdk-php",
     "description": "Web SDK for Tasks api",
     "type": "library",
-    "minimum-stability": "",
-    "require": {}
+    "minimum-stability": "master",
+    "require": {
+            "php": ">=5.3.0"}
 }
