@@ -8,5 +8,5 @@
     "autoload": {
     "classmap": [
         "idfy-eve/sdk-php/idfy"
-    ]
+    ]}
 }
