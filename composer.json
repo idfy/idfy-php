@@ -1,0 +1,7 @@
+{
+    "name": "idfy/sdk-php",
+    "description": "Web SDK for Tasks api",
+    "type": "library",
+    "minimum-stability": "stable",
+    "require": {}
+}
