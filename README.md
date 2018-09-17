@@ -36,7 +36,7 @@ Please ensure the ***API_KEY*** is included as a string.
     
 ```php
 $client->post_request($task_type="pan_ocr", $task_id="4d48c187-53e5-4b6e-947a-04655eed588b",
-            data=array("doc_url"=> "https://tiimg.tistatic.com/fp/1/003/642/pan-card-service-352.jpg",));
+            $data=array("doc_url"=> "https://tiimg.tistatic.com/fp/1/003/642/pan-card-service-352.jpg",));
 ```
 - Mandatory arguments: ***task_type*** *(string)*, ***task_id*** *(string)*, ***data*** *(dictionary)*
 - Optional arguments: ***group_id*** *(string)*
