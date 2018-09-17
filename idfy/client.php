@@ -15,7 +15,7 @@ class Client extends Tasks{
     var $base_url;
     var $headers;
 
-    function __construct($autho,array $options){
+    function __construct($autho,array $options=NULL){
 
         $this -> DEFAULTS['base_url_v2'] = Url::$BASE_URL_V2;
         $this -> DEFAULTS['base_url_v3'] = Url::$BASE_URL_V3;
@@ -33,7 +33,7 @@ class Client extends Tasks{
         
     }
 
-    function set_base_url(array $options){
+    function set_base_url(array $options=NULL){
         /*
         Set the api_endpoint based on client's initiation
         :param options: dict obj
@@ -90,7 +90,7 @@ class Client extends Tasks{
         :param group_id: group_id
         :return: API_request's request_id and status
     */
-        $req_obj = new Utility($task_type, $task_id, $data, $group_id=NULL);
+        $req_obj = new Utility($task_type, $task_id, $data, $group_id);
         $req_body = $req_obj->validate_request_arguments($api_version="v2");
         $url = $this->DEFAULTS['base_url_v2'];
         
@@ -163,7 +163,7 @@ class Client extends Tasks{
         //Sending GET Request:
         $url = $this->DEFAULTS['base_url_v2'];
         $url = $url."?".$dat;
-        print_r ($url);
+        // print_r ($url);
         
         $curl = curl_init();
 
