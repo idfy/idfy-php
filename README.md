@@ -35,7 +35,7 @@ Please ensure the ***API_KEY*** is included as a string.
 - Making API call to make service request.(Refer various ***services*** (or) ***task_types*** here - https://api-docs.idfy.com/v2/#task-types).
     
 ```php
-$client->post_request($task_type="pan_ocr", $task_id="4d48c187-53e5-4b6e-947a-04655eed588b", $group_id="d468f87e-8e7b-4422-83eb-2edf4c1cfb95",
+$client->post_request($task_type="pan_ocr", $task_id="4d48c187-53e5-4b6e-947a-04655eed588b",
             data=array("doc_url"=> "https://tiimg.tistatic.com/fp/1/003/642/pan-card-service-352.jpg",));
 ```
 - Mandatory arguments: ***task_type*** *(string)*, ***task_id*** *(string)*, ***data*** *(dictionary)*
