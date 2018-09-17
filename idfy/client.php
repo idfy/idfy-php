@@ -24,7 +24,7 @@ class Client extends Tasks{
         $this -> auth = $autho;
         $this -> base_url = $this -> set_base_url($options);
         
-        if ($options){
+        if ($options!=NULL){
             $this -> headers = $this -> validate_headers($options);
         }else{
             $this-> headers = $this->DEFAULTS['headers'];
@@ -40,13 +40,14 @@ class Client extends Tasks{
         :return: api_endpoint url
         */
         $api_endpoint = $this -> DEFAULTS['base_url_v2'];       
-        
-        if (array_key_exists('url', $options)){
-            if (!is_string($options['url'])){
-                throw new BadRequestError('URL is not a string');
-            }
-            else{
-                $api_endpoint = $options['url'];
+        if ($options != NULL){
+            if (array_key_exists('url', $options)){
+                if (!is_string($options['url'])){
+                    throw new BadRequestError('URL is not a string');
+                }
+                else{
+                    $api_endpoint = $options['url'];
+                }
             }
         }
         return $api_endpoint;
@@ -133,25 +134,25 @@ class Client extends Tasks{
         :return: API_call's response
     */
         $params = array();
-        if (!$request_id && !$group_id && $task_id){
+        if ($request_id == NULL && $group_id==NULL && $task_id==NULL){
             throw new BadRequestError("Invalid request. Provide atleast one of request_id, group_id or task_id.");
         } 
-        if (!is_string($request_id) && $request_id){
+        if (!is_string($request_id) && $request_id!=NULL){
             throw new BadRequestError("Invalid request_id format. Expected format is string.");
         }
-        if ($request_id){
+        if ($request_id!=NULL){
             $params['request_id'] = $request_id;
         }
-        if (!is_string($group_id) && $group_id){
+        if (!is_string($group_id) && $group_id!=NULL){
             throw new BadRequestError("Invalid group_id format. Expected format is string.");
         }
-        if ($group_id){
+        if ($group_id!=NULL){
             $params['group_id'] = $group_id;
         }
-        if (!is_string($task_id) && $task_id){
+        if (!is_string($task_id) && $task_id!=NULL){
             throw new BadRequestError("Invalid task_id format. Expected format is string.");
         }
-        if ($task_id){
+        if ($task_id!=NULL){
             $params['task_id'] = $task_id;
         }
 
