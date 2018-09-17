@@ -54,8 +54,14 @@ $client->post_request($task_type="pan_ocr", $task_id="4d48c187-53e5-4b6e-947a-04
 
 #####**GET response**
 - Making API call, to receive response from the request made in the above step. ***request_id*** - generated in the previous step, will be an argument to get the response.
-```python
+```php
+Syntax : 
+$client->get_response($request_id,$group_id,$task_id)
+
+Example:
 $client->get_response($request_id="e53992c5-6d6f-4d85-bc36-07f7442f91bc")
+or
+$client->get_response(null,$group_id="group-id")
 ```
 - Mandatory argument(s) - ***request_id*** *(string)*.
 - Response from the above the API-call:

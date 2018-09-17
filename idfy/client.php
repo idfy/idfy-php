@@ -124,7 +124,7 @@ class Client extends Tasks{
     
     }
 
-    public function get_request($request_id=NULL, $group_id=NULL, $task_id=NULL){
+    public function get_response($request_id=NULL, $group_id=NULL, $task_id=NULL){
     /*
         get request to retrieve response from EVE-API with request_id
         :param request_id: request_id
