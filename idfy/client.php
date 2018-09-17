@@ -193,12 +193,3 @@ class Client extends Tasks{
     
     
 }
-$arr = array("url"=>"google.com");
-$a = new Client("77484e44-db92-4a64-9584-0cc1798cd44e",array("apikey"=> "77484e44-db92-4a64-9584-0cc1798cd44e","Content-Type"=>"application/json"));
-
-
-// print_r ($a -> post_request("pan_validation","php-sdk1",array("doc_url"=>"https://s3-ap-southeast-1.amazonaws.com/addressify-demo/eve+api+images/PAN+LATEST/IMG_20171218_161405308.jpg")));
-
-print_r ($a->get_request($request_id=NULL,$group_id="the-long-bright-dark"));
-
-
