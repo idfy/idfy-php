@@ -82,7 +82,7 @@ class Utility extends Tasks{
             $any_fields_flag = FALSE;
 
             foreach ($any_task_data_fields as $key){
-                if (array_key_exists($key, $input_data_keys)){
+                if (in_array($key, $input_data_keys)){
                     $any_fields_flag = TRUE;
                     break;
                 }
