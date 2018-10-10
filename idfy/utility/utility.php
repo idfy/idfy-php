@@ -119,17 +119,24 @@ class Utility extends Tasks{
         if (($this->check_dict($this -> data))){
             throw new BadRequestError("Invalid data format. Expected format is associative array, eg: array('doc_url'=> '<URL>') or ['doc_url' => '<URL>']");
         }
+        elseif (sizeof($this->data) == 0){
+            throw new BadRequestError("Empty data provided.");
+        }
         if (!is_string($this->task_id)){
             throw new BadRequestError("Invalid task_id format. Expected format is string, eg: '<TASK_ID>'");
+        }
+        elseif (strlen($this->task_id) == 0){
+            throw new BadRequestError("Empty task_id provided.");
         }
         if (!is_string($this->task_type)){
             throw new BadRequestError("Invalid task_id format. Expected format is string, eg: '<TASK_ID>'");
-        }elseif (!array_key_exists($this->task_type,$this->DEFAULTS['tasks_config'][$api_version]['data_schema'])){
+        }
+        elseif (strlen($this->task_type) == 0){
+            throw new BadRequestError("Empty task_type provided. Refer the doc for task_types -   https://api-docs.idfy.com/v2/#task-types");
+        }
+        elseif (!array_key_exists($this->task_type,$this->DEFAULTS['tasks_config'][$api_version]['available_tasks'])){
             throw new BadRequestError("Invalid task_type requested. Refer the doc for task_types - ".
             "https://api-docs.idfy.com/v2/#task-types");
-        }
-        if (!is_string($this->task_id)){
-            throw new BadRequestError("Invalid task_id format. Expected format is string, eg: '<TASK_ID>'");
         }
         if (isset($this->group_id)){
             if (!is_string($this->group_id)){
