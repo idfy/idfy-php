@@ -36,6 +36,10 @@ class Tasks{
                                     "optional_fields"=> array(), "any"=> array()),
                 "pan_validation"=> array("mandate_fields"=> array("doc_url"),
                                    "optional_fields"=> array(), "any"=> array()),
+                "gst_ocr"=> array("mandate_fields"=> array("doc_url"), "optional_fields"=> array(), "any"=> array()),
+                "gst_verification"=> array("mandate_fields"=> array("gstin"), "optional_fields"=> array(), "any"=> array()), 
+                "aadhaar_verification"=>array("mandate_fields"=>array("aadhaar_number","aadhaar_name",                        "aadhaar_consent"), "optional_fields"=>array(), "any"=> array()),
+                                   
             )
             ),
 
