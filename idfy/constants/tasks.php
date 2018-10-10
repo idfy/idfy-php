@@ -36,11 +36,16 @@ class Tasks{
                                     "optional_fields"=> array(), "any"=> array()),
                 "pan_validation"=> array("mandate_fields"=> array("doc_url"),
                                    "optional_fields"=> array(), "any"=> array()),
+                "gst_ocr"=> array("mandate_fields"=> array("doc_url"), "optional_fields"=> array(), "any"=> array()),
+                "gst_verification"=> array("mandate_fields"=> array("gstin"), "optional_fields"=> array(), "any"=> array()), 
+                "aadhaar_verification"=>array("mandate_fields"=>array("aadhaar_number","aadhaar_name",                        "aadhaar_consent"), "optional_fields"=>array(), "any"=> array()),
+                                   
             ),
             "available_tasks"=>array('pan_ocr', 'pan_verification', 'aadhaar_ocr', 'cheque_ocr', 'voter_ocr', 'voter_verification',
             'driving_license_ocr', 'driving_license_details', 'passport_ocr', 'company_details', 'coi_ocr',
             'coi_verification', 'domain_identification', 'rc_verification', 'face_compare', 'face_validation',
             'pan_validation','gst_ocr','gst_verification', 'aadhaar_verification')
+
             ),
 
         "v3"=>
