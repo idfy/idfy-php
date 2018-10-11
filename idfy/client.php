@@ -33,7 +33,7 @@ class Client extends Tasks{
         
     }
 
-    function set_base_url(array $options=NULL){
+    private function set_base_url(array $options=NULL){
         /*
         Set the api_endpoint based on client's initiation
         :param options: dict obj
@@ -53,7 +53,7 @@ class Client extends Tasks{
         return $api_endpoint;
     }
 
-    public function validate_headers($option){
+    private function validate_headers($option){
     /*
         Validate headers and update headers if provided during client initiation
         :param options: kwargs
@@ -191,6 +191,8 @@ class Client extends Tasks{
         }
         return $response;
     }
-    
-    
+     
 }
+// $aaa = new Client("77484e44-db92-4a64-9584-0cc1798cd44e",[]);
+
+// print_r ($aaa -> post_request("pan_ocr","php11",array("doc_url"=>"https://s3-ap-southeast-1.amazonaws.com/addressify-demo/eve+api+images/PAN+LATEST/IMG_20171218_161405308.jpg"),"group"));

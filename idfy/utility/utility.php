@@ -27,7 +27,7 @@ class Utility extends Tasks{
         $this -> group_id = $group__id;
     }
 
-    function update_api_body(){
+    private function update_api_body(){
         /*
         Update the api_body 
         :return: updated req_body
@@ -45,7 +45,7 @@ class Utility extends Tasks{
         return json_encode($req_body);
     }
 
-    function validate_request_data(string $api_version){
+    private function validate_request_data(string $api_version){
         /*
         validate request_data. Checks presence of mandate_fields
         :param data: part of request_body
@@ -134,7 +134,7 @@ class Utility extends Tasks{
         elseif (strlen($this->task_type) == 0){
             throw new BadRequestError("Empty task_type provided. Refer the doc for task_types -   https://api-docs.idfy.com/v2/#task-types");
         }
-        elseif (!array_key_exists($this->task_type,$this->DEFAULTS['tasks_config'][$api_version]['available_tasks'])){
+        elseif (!in_array($this->task_type,$this->DEFAULTS['tasks_config'][$api_version]['available_tasks'])){
             throw new BadRequestError("Invalid task_type requested. Refer the doc for task_types - ".
             "https://api-docs.idfy.com/v2/#task-types");
         }
@@ -150,7 +150,7 @@ class Utility extends Tasks{
     }
 
     //Function to check if given input is an associative array (i.e., A dict)
-    function check_dict($input){
+    private function check_dict($input){
         if (!is_array($input)){
             return FALSE;
         }
