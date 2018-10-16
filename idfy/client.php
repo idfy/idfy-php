@@ -15,13 +15,15 @@ class Client extends Tasks{
     var $base_url;
     var $headers;
 
-    function __construct($autho,array $options=NULL){
+    function __construct($autho,$account_id,array $options=NULL){
 
         $this -> DEFAULTS['base_url_v2'] = Url::$BASE_URL_V2;
         $this -> DEFAULTS['base_url_v3'] = Url::$BASE_URL_V3;
         $this -> DEFAULTS['headers'][0] = 'Content-Type: application/json';
         array_push($this->DEFAULTS['headers'],"apikey: ".($autho));
+        array_push($this->DEFAULTS['headers'],"account_id: ".($account_id));
         $this -> auth = $autho;
+        $this -> account_id = $account_id;
         $this -> base_url = $this -> set_base_url($options);
         
         if ($options!=NULL){
@@ -193,6 +195,8 @@ class Client extends Tasks{
     }
      
 }
-// $aaa = new Client("77484e44-db92-4a64-9584-0cc1798cd44e",[]);
+// $aaa = new Client("77484e44-db92-4a64-9584-0cc1798cd44e","ggg",[]);
 
 // print_r ($aaa -> post_request("pan_ocr","php11",array("doc_url"=>"https://s3-ap-southeast-1.amazonaws.com/addressify-demo/eve+api+images/PAN+LATEST/IMG_20171218_161405308.jpg"),"group"));
+
+// $aaa->get_response("cba3ab9a-b6a0-4b11-9b52-39e505f313fc");
