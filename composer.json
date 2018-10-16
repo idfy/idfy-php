@@ -1,6 +1,6 @@
 {
-    "name": "idfy-eve/sdk-php",
-    "description": "Web SDK for Tasks api",
+    "name": "idfy",
+    "description": "Web SDK for Integration with IDfy (Tasks api)",
     "type": "library",
     "minimum-stability": "dev",
     "require": {
