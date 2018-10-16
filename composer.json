@@ -1,5 +1,5 @@
 {
-    "name": "idfy",
+    "name": "idfy-eve/php",
     "description": "Web SDK for Integration with IDfy (Tasks api)",
     "type": "library",
     "minimum-stability": "dev",
