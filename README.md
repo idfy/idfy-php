@@ -11,7 +11,7 @@ Util to request IDfy's Extraction and Verification Engine services.
 1. Ensure you have composer installed. Here is a link : https://getcomposer.org/download/
 2. Add the following requirement to your composer.json file present in the project :
 "require": {
-        "idfy-eve/sdk-php": "dev-master"
+        "idfy-eve/php": "dev-master"
     }
 3. Run "composer require idfy-eve/sdk-php" from your project root directory
 4. Add the following in your main php script:
